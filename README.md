@@ -8,12 +8,12 @@ In Russ Rogers’ talk ”The Keys to the Kingdom”[1] he defines a covert chan
 >”Any communication channel that can be exploited by a process to transfer informa-
 >tion in a manner that violates the systems security policy.” 
 
-Covert channels bypass firewalls and IDS, by disgusing data as other protocols. This was first documented in phrack issue 49, it was called [Project loki][4]. This uses the payload field of ICMP's request paket to hide user data such as HTTP, SSH etc. In doing so most firewalls will allow the ping packet to pass though with out any issue. A working example of this is [ptunnel][2].
+Covert channels bypass firewalls and IDS, by disguising data as other protocols. This was first documented in phrack issue 49, it was called [Project loki][4]. This uses the payload field of ICMP's request packet to hide user data such as HTTP, SSH etc. In doing so most firewalls will allow the ping packet to pass though with out any issue. A working example of this is [ptunnel][2].
 
-The proposal, be it A or B, will follow a simular path to the image below.
+The proposal, be it A or B, will follow a similar path to the image below.
 
 ![net-work-flow](http://port22.co.uk/i/network-flow.png)
-Taken from [my dissertation][3].
+Taken from [my dissertationn][3].
 
 Covert channels are not the same as an encrypted channel, with an encrypted channel it does not matter if it is discovered, as the payload will be ciphertext, which without the decryption key, would be unreadable. Whereas covert channels are designed to go unnoticed, this does not mean that a covert channel can not be encrypted.
 
@@ -28,23 +28,29 @@ You're on the go, and stumble across an open wireless network. The network gives
 
 ## Proposal
 
-### A - Existing application imporvements.
+### A - Existing application improvements.
 
 #### Existing Work
 
-I've written for my final year project, a covert channel to run on GNU/Linux. It currently supports covert channels over ICMP, and has a working applciation proxy, and end node. Though there is an issue with buffer lengths whcih needs to be investigated.
+I've written for my final year project, a covert channel to run on GNU/Linux. It currently supports covert channels over ICMP, and has a working application proxy, and end node. Though there is an issue with buffer lengths which needs to be investigated.
 
-Even though there is existing code, due to the nature of the fianl year project, I feel it would be worth while to spend some time rewritting some of the legacy code to reflect what I've learnt since implementing it.
+Even though there is existing code, due to the nature of the final year project, I feel it would be worth while to spend some time rewriting some of the legacy code to reflect what I've learnt since implementing it.
 
 #### Project Goals
 
 - Primary Goals
  - Open Source the current implementation.
- - Bug fixing and hignsight re implentation of some features (inter-proccess communcation and pre-forking)
- - Implement protocol hopping of a minimumn of two (ICMP and DNS)
+ - Bug fixing and hindsight re implementation of some features (inter-process communication and pre-forking)
+ - Implement protocol hopping of a minimum of two (ICMP and DNS)
 
 - Secondary Goals
  - Implement as many covert protocols as possible (Bit Manipulation of TCP and IP Headers, DNS)
+
+#### Existing Code
+
+Before opening the code to the public, I need to check with the university.
+
+(Code)[https://github.com/PMaynard/covert-comms-code]
 
 ### B - Android from Scratch.
 
@@ -52,8 +58,8 @@ Using the knowledge from my final year project, I propose to design and implemen
 
 #### Project Goals
 - Primary Goals
- - Proxy Server - To proxy connections from android applcaitons to the covert server.
- - Covert Server - To handle covert communcations, to and from the android device.
+ - Proxy Server - To proxy connections from android application to the covert server.
+ - Covert Server - To handle covert communications, to and from the android device.
  - Implement a basic covert channel, such as ICMP.
 
 - Secondary Goals
@@ -61,7 +67,7 @@ Using the knowledge from my final year project, I propose to design and implemen
 
 #### Work to be carried out
 
-In the beggining of the project I will have to do some spike work into android packet sniffing and packet manipulation. Does this require a rooted device, etc. 
+In the beginning of the project I will have to do some spike work into android packet sniffing and packet manipulation. Does this require a rooted device, etc. 
 
 Next step would be how we should go about getting android applications to use a proxy server. 
 
