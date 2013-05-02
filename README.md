@@ -50,7 +50,7 @@ Even though there is existing code, due to the nature of the final year project,
 
 Before opening the code to the public, I need to check with the university.
 
-(Code)[https://github.com/PMaynard/covert-comms-code]
+[https://github.com/PMaynard/covert-comms-code](code)
 
 ### B - Android from Scratch.
 
